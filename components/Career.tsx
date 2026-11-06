@@ -12,7 +12,7 @@ export default function Career() {
   return (
     <section id="career">
       <Reveal className="head">
-        <div><span className="eyebrow">Career</span><h2>Six years, <em>three teams.</em></h2></div>
+        <div><span className="eyebrow">Career</span><h2>Five-plus years, <em>three teams.</em></h2></div>
         <p>From server-side modules as a junior developer to owning frontend architecture and leading a team.</p>
       </Reveal>
       <div className="xp" ref={ref}>

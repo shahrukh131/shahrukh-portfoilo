@@ -4,13 +4,6 @@ import { caseStudy } from "@/content/site";
 import Reveal from "./Reveal";
 import ProductGallery from "./ProductGallery";
 
-const chapters = [
-  { id: "c1", label: "Performance" },
-  { id: "c2", label: "Data layer" },
-  { id: "c3", label: "Security" },
-  { id: "c4", label: "Product engine" },
-];
-
 function LatencyRace() {
   const [t, setT] = useState(2660);
   const running = useRef(false);
@@ -65,18 +58,11 @@ function LatencyRace() {
 }
 
 export default function CaseStudy() {
-  const [active, setActive] = useState("c1");
-  useEffect(() => {
-    const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: "-45% 0px -45% 0px" });
-    chapters.forEach((c) => { const el = document.getElementById(c.id); if (el) io.observe(el); });
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section id="case">
       <Reveal className="head">
         <div><span className="eyebrow">Featured case study</span><h2>One platform, owned <em>end to end.</em></h2></div>
-        <p>How I took an enterprise service desk from slow and fragile to fast, cached and secure, as its sole frontend engineer.</p>
+        <p>An enterprise service desk taken from slow and fragile to fast, cached and secure, as its sole frontend engineer.</p>
       </Reveal>
 
       <div className="case">
@@ -87,9 +73,6 @@ export default function CaseStudy() {
           <div className="facts">
             {caseStudy.facts.map((f) => (<div key={f.k}><span>{f.k}</span><b>{f.v}</b></div>))}
           </div>
-          <nav className="progress" aria-label="Case study chapters">
-            {chapters.map((c) => (<a key={c.id} href={`#${c.id}`} className={active === c.id ? "on" : undefined}><i />{c.label}</a>))}
-          </nav>
         </aside>
 
         <div className="chapters">
@@ -104,37 +87,6 @@ export default function CaseStudy() {
             </ul>
           </div></Reveal>
 
-          <Reveal as="article" className="ch"><div id="c2">
-            <span className="tag">Data layer</span>
-            <h4>No more duplicate requests, races or stale SLA timers.</h4>
-            <p>I migrated data fetching to TanStack Query so caching, deduping and invalidation have one owner instead of living in every component.</p>
-            <div className="kpis">
-              <div><b>12.5 MB</b><span>location dataset cached in IndexedDB</span></div>
-              <div><b>24 h</b><span>cache expiry, then a fresh pull</span></div>
-              <div><b>0</b><span>downloads for users who can&apos;t edit</span></div>
-            </div>
-          </div></Reveal>
-
-          <Reveal as="article" className="ch"><div id="c3">
-            <span className="tag">Security</span>
-            <h4>Every audit finding closed.</h4>
-            <p>A security audit flagged the platform. I fixed every finding in layers, from response headers down to how user content renders.</p>
-            <ul>
-              <li>Content Security Policy and clickjacking headers.</li>
-              <li>Upload validation, plus DOMPurify sanitisation of user HTML.</li>
-            </ul>
-          </div></Reveal>
-
-          <Reveal as="article" className="ch"><div id="c4">
-            <span className="tag">Product engine</span>
-            <h4>Forms admins configure, and SLAs that respect office hours.</h4>
-            <p>A dynamic form engine with cascading fields lets admins shape ticket forms without a release. SLA tracking counts business hours only and flags breaches as they happen.</p>
-            <div className="sla" aria-hidden="true">
-              <div className="r"><span>P1 · Branch network down</span><span className="mono" style={{ color: "var(--warm)" }}>38 m left</span><div className="bar"><i style={{ width: "84%", background: "var(--warm)" }} /></div></div>
-              <div className="r"><span>P2 · Email access after reset</span><span className="mono" style={{ color: "var(--muted)" }}>5 h 10 m</span><div className="bar"><i style={{ width: "40%", background: "var(--accent)" }} /></div></div>
-              <div className="r"><span>P3 · Laptop request</span><span className="mono" style={{ color: "#F08A7A" }}>Breached</span><div className="bar"><i style={{ width: "100%", background: "#F08A7A" }} /></div></div>
-            </div>
-          </div></Reveal>
         </div>
       </div>
 

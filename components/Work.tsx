@@ -81,26 +81,20 @@ export default function Work() {
           <div className="et-top">
             <div>
               <h3>eTender Vendor Portal</h3>
-              <p>A vendor-facing e-procurement portal for a bank: vendors register, buy tender documents, submit bids and compete in live reverse auctions. I was the top committer on the frontend team. These are the parts I built or co-built.</p>
+              <p>A bank&apos;s e-procurement portal where vendors register, bid and compete in live reverse auctions. I was the top committer on the frontend team.</p>
             </div>
             <div className="chips" style={{ marginTop: 0 }}>{["Next.js 16", "React 19", "Socket.IO", "Ant Design 5", "SCSS Modules"].map((c) => <span key={c}>{c}</span>)}</div>
           </div>
-          <div className="contrib">
-            <div><span className="mono">Owned</span><ul>
-              <li>Auction list and live auction modules: search, status badges, terms tracking, read-only mode and access rules for disqualified, ended or cancelled auctions</li>
-              <li>Safe bid entry: instant range and step checks, a confirm step, a unique submission ID against double submits, and the amount shown in words as you type</li>
-              <li>White-label theme engine on CSS variables: each client&apos;s colours, font and logo come from the backend, so a rebrand needs no code change</li>
-              <li>Rebuilt multi-step vendor registration and split the profile module into bank details, users and documents</li>
+          <div className="contrib two">
+            <div><span className="mono">What I owned</span><ul>
+              <li>Auction list and live auction modules, with access rules for disqualified, ended or cancelled auctions</li>
+              <li>Safe bid entry: live range and step checks, a confirm step and a unique submission ID against double submits</li>
+              <li>White-label theme engine: each client&apos;s colours, font and logo come from the backend</li>
             </ul></div>
-            <div><span className="mono">Built with a teammate</span><ul>
-              <li>Live auction screen over Socket.IO: server-synced countdown with extensions, live rank, announcements, activity timeline and chat</li>
-              <li>Live notifications</li>
-            </ul></div>
-            <div><span className="mono">Fixed and improved</span><ul>
-              <li>An infinite logout loop when an expired session made the logout request itself fail</li>
-              <li>Layout shift from the header and logo, and bid amounts up to 99 crore kept on one line</li>
-              <li>Network traffic: merged identical in-flight requests and paused dashboard refresh in background tabs</li>
-              <li>Restructured the code by feature (API layer, mappers, hooks, components) and wrote the project README</li>
+            <div><span className="mono">Co-built and fixed</span><ul>
+              <li>Real-time live auction screen over Socket.IO, built with a teammate</li>
+              <li>Fixed an infinite logout loop and header layout shift</li>
+              <li>Cut network traffic by merging duplicate requests and pausing refresh in background tabs</li>
             </ul></div>
           </div>
         </Reveal>

@@ -25,7 +25,7 @@ export const hero = {
 export type Stat = { value: string; count?: number; suffix?: string; label: string };
 export const stats: Stat[] = [
   { value: "26×", count: 26, suffix: "×", label: "faster ticket-details API call on WINGS ITSM" },
-  { value: "6+", count: 6, suffix: "+", label: "years building production web platforms" },
+  { value: "5+", count: 5, suffix: "+", label: "years building production web platforms" },
   { value: "16→7", label: "requests per page after moving data fetching to TanStack Query" },
   { value: "IEEE", label: "published in ML-based image detection" },
 ];
@@ -41,7 +41,7 @@ export const clients = [
 export const stack = [
   "React", "Next.js App Router", "TypeScript", "TanStack Query", "Redux Toolkit", "Zustand",
   "React Hook Form", "Zod", "Tailwind CSS", "shadcn/ui", "NestJS", "PostgreSQL", "Redis",
-  "BullMQ", "Socket.IO", "Keycloak", "CI/CD",
+  "BullMQ", "Socket.IO", "Laravel", "Docker", "CI/CD",
 ];
 
 export const caseStudy = {
@@ -107,10 +107,10 @@ export const about = [
 export const skills = [
   { icon: "ui", title: "Interface", items: "React · Next.js (App Router) · TypeScript · JavaScript · Tailwind CSS · shadcn/ui · MUI · Ant Design · Vite" },
   { icon: "state", title: "State & forms", items: "Redux Toolkit · Zustand · TanStack Query · React Hook Form · Zod" },
-  { icon: "api", title: "Backend & data", items: "Node.js · NestJS · Express · REST APIs · Sequelize · PostgreSQL · MySQL · SQL Server" },
+  { icon: "api", title: "Backend & data", items: "Node.js · NestJS · Express · Laravel · REST APIs · Sequelize · PostgreSQL · MySQL · SQL Server" },
   { icon: "rt", title: "Real-time & jobs", items: "Socket.IO · Redis · BullMQ · Meilisearch · Cloudflare R2" },
-  { icon: "sec", title: "Auth & security", items: "JWT · OAuth / SSO (Microsoft, Google) · Keycloak · RBAC · CSP · XSS prevention" },
-  { icon: "tool", title: "Delivery", items: "CI/CD · Git · Swagger · code review · AI-assisted development (Claude Code)" },
+  { icon: "sec", title: "Auth & security", items: "JWT · OAuth / SSO (Microsoft, Google) · RBAC · CSP · XSS prevention" },
+  { icon: "tool", title: "Delivery", items: "Docker · CI/CD · Git · Swagger · code review · AI-assisted development (Claude Code)" },
 ] as const;
 
 export const career = [
@@ -124,7 +124,16 @@ export const career = [
       "Vehicle Registration System for Runner Group, with role-based multi-level approvals and summary reports",
     ],
   },
-  { when: "May 2021 – May 2022", company: "VISERX", role: "Software Engineer", body: "Built an inventory management system and an e-commerce platform with Laravel, React and Redux, plus a stock brokerage web app for Tasia Securities." },
+  {
+    when: "May 2021 – May 2022",
+    company: "VISERX",
+    role: "Software Engineer",
+    body: "Built business systems end to end with Laravel, React and Redux.",
+    bullets: [
+      "NAF Spare Parts Sales & Inventory for Naf Group: internal sales and stock tracking for one of Bangladesh's established industrial groups",
+      "An e-commerce platform, and a stock brokerage web app for Tasia Securities",
+    ],
+  },
   { when: "Mar 2020 – Apr 2021", company: "Flyte Solutions", role: "Junior Software Developer", body: "Built reusable server-side modules for frontend features, and found and fixed performance bottlenecks." },
   { when: "2019", company: "East West University", role: "BSc in Computer Science and Engineering" },
 ];
