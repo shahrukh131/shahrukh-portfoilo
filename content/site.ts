@@ -39,7 +39,7 @@ export const clients = [
 ];
 
 export const stack = [
-  "React", "Next.js App Router", "TypeScript", "TanStack Query", "Redux Toolkit", "Zustand",
+  "React", "Next.js", "TypeScript", "TanStack Query", "Redux Toolkit", "Zustand",
   "React Hook Form", "Zod", "Tailwind CSS", "shadcn/ui", "NestJS", "PostgreSQL", "Redis",
   "BullMQ", "Socket.IO", "Laravel", "Docker", "CI/CD",
 ];
