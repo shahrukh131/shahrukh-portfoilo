@@ -587,3 +587,56 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
 .fv-roles div{display:grid;grid-template-columns:130px 1fr;gap:10px;align-items:center;font-size:.76rem;color:var(--muted)}
 .fv-roles i{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--accent),transparent)}
 #saas{padding-block:clamp(72px,9vw,120px) 0}
+
+/* ---------- mobile pass ---------- */
+/* touch devices: reveal hover-only affordances */
+@media (hover:none){.opt .act{opacity:1}}
+@media (max-width:960px){.progress{display:none}}
+@media (max-width:640px){
+  .head{margin-bottom:36px;gap:18px}
+  .bento{gap:12px}
+  .card,.wcard,.paper{padding:22px;border-radius:18px}
+  .princ div{padding:20px 22px}
+  .feat{border-radius:22px}
+  .clients ul{border-top:1px solid var(--line)}
+  .clients li{padding:12px 14px}
+  .clients li:nth-child(odd){border-left:0;padding-left:0}
+  .ab-photo{width:140px;height:140px}
+  .xp{padding-left:32px}
+  .job::before{left:-27px}
+  .job h3{font-size:1.4rem}
+  .note summary{padding:18px 20px}
+  .note>div{padding:0 20px 18px}
+  .contact h2{margin-bottom:28px}
+  .g-tabs{flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none}
+  .g-tabs::-webkit-scrollbar{display:none}
+  .g-tabs button{flex:none}
+}
+@media (max-width:480px){
+  .nav{gap:2px;padding:5px}
+  .nav a{padding:7px 11px;font-size:.82rem}
+  .hero{padding-block:120px 56px}
+  .avail{font-size:.78rem}
+  .hero h1{font-size:clamp(2.4rem,11.5vw,2.9rem);max-width:none}
+  .sub{margin-top:28px;gap:24px}
+  .ctas{width:100%}
+  .ctas .btn{flex:1 1 auto;justify-content:center;padding:13px 18px}
+  .stats{margin-top:52px}
+  .stats>div{padding:18px 12px 0 0}
+  .stats>div+div{padding-left:12px}
+  .stats>div:nth-child(3){padding-left:0}
+  .stats span{font-size:.8rem}
+  .lane{grid-template-columns:60px 1fr 64px;gap:10px;font-size:.78rem}
+  .schema{grid-template-columns:1fr}
+  .mig .v{font-size:1.9rem}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div{padding:12px}
+  .wcard li{grid-template-columns:84px 1fr;gap:10px;font-size:.9rem}
+  .fv-roles div{grid-template-columns:96px 1fr}
+  .fv-panel{padding:16px}
+  .links>*{padding:18px 12px 18px 0}
+  .links>*+*{padding-left:12px}
+  .links>*:nth-child(3){padding-left:0}
+  .track span{font-size:1.2rem;gap:32px}
+  .track{gap:32px}
+}
