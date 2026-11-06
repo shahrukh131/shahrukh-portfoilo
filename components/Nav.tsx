@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { profile } from "@/content/site";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#case", label: "Case study" },
@@ -34,6 +35,7 @@ export default function Nav() {
         {links.map((l) => (
           <a key={l.href} href={l.href} className="hide-s" {...ext(l.external)}>{l.external ? "Resume" : l.label}</a>
         ))}
+        <ThemeToggle />
         <a href="#contact" className="cta">Contact</a>
         <button type="button" className="menu-btn" aria-label="Menu" aria-expanded={open} aria-controls="nav-menu" onClick={() => setOpen((o) => !o)}>
           <i /><i />

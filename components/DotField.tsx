@@ -11,6 +11,18 @@ export default function DotField() {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let W = 0, H = 0, dots: { x: number; y: number }[] = [];
     let mx = -999, my = -999, tmx = -999, tmy = -999, vis = true, raf = 0;
+    // Dot colours follow the theme tokens (--dot-rgb / --accent-rgb); re-read when <html data-theme> changes.
+    let base = "226,232,255", hi = "157,184,255", boost = 1;
+    const readTheme = () => {
+      const cs = getComputedStyle(document.documentElement);
+      base = cs.getPropertyValue("--dot-rgb").trim() || base;
+      hi = cs.getPropertyValue("--accent-rgb").trim() || hi;
+      boost = document.documentElement.dataset.theme === "light" ? 0.85 : 1;
+    };
+    readTheme();
+    // With reduced motion there is no RAF loop, so repaint once after a theme switch.
+    const mo = new MutationObserver(() => { readTheme(); if (reduce) requestAnimationFrame(draw); });
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     const size = () => {
       const dpr = Math.min(devicePixelRatio || 1, 2);
       const r = cv.getBoundingClientRect();
@@ -32,7 +44,7 @@ export default function DotField() {
           const wave = reduce ? 0 : Math.sin(d.x * 0.012 + time * 2) * Math.cos(d.y * 0.014 + time * 1.4);
           let ox = 0, oy = 0, a = 0.13 + wave * 0.06, rad = 1;
           if (dist < R) { const f = 1 - dist / R, p = f * f * 18; ox = (dx / (dist || 1)) * p; oy = (dy / (dist || 1)) * p; a = 0.13 + f * 0.75; rad = 1 + f * 1.3; }
-          ctx.fillStyle = dist < R ? `rgba(157,184,255,${a})` : `rgba(226,232,255,${a})`;
+          ctx.fillStyle = `rgba(${dist < R ? hi : base},${a * boost})`;
           ctx.beginPath(); ctx.arc(d.x + ox, d.y + oy, rad, 0, 6.283); ctx.fill();
         }
       }
@@ -41,7 +53,7 @@ export default function DotField() {
     size(); addEventListener("resize", size);
     hero.addEventListener("pointermove", move); hero.addEventListener("pointerleave", leave);
     io.observe(hero); raf = requestAnimationFrame(draw);
-    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); hero.removeEventListener("pointermove", move); hero.removeEventListener("pointerleave", leave); io.disconnect(); };
+    return () => { cancelAnimationFrame(raf); removeEventListener("resize", size); hero.removeEventListener("pointermove", move); hero.removeEventListener("pointerleave", leave); io.disconnect(); mo.disconnect(); };
   }, []);
   return <canvas id="field" ref={ref} aria-hidden="true" />;
 }
