@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
 @keyframes pulse{to{box-shadow:0 0 0 10px rgba(127,214,168,0)}}
 .fullname{margin:26px 0 0;font-family:var(--display);font-weight:500;font-size:clamp(1.1rem,1.8vw,1.4rem);letter-spacing:-.01em;color:var(--ink);animation:up .8s .35s var(--ease) both}
 .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.9rem,7.6vw,6.6rem);line-height:.98;letter-spacing:-.045em;margin:10px 0 0;max-width:13ch;font-variation-settings:"opsz" 96}
-.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin:0 .12em -.08em 0}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .hero h1 .w>span{display:inline-block;animation:rise 1s var(--ease) both}
 .hero h1 .soft{color:var(--muted)}
 .hero h1 .hl{background:linear-gradient(100deg,var(--accent),#C9D7FF 45%,var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
