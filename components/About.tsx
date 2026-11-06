@@ -16,7 +16,7 @@ export default function About() {
     <section id="about">
       <Reveal className="about">
         <div className="ab-me">
-          <Image className="ab-photo" src="/headshot.jpg" alt={`Portrait of ${profile.name}`} width={180} height={180} priority={false} />
+          <div className="ab-frame"><Image className="ab-photo" src="/headshot.jpg" alt={`Portrait of ${profile.name}`} width={480} height={600} sizes="(max-width: 640px) 112px, 260px" /></div>
           <div><b>{profile.name}</b><span>{profile.role} · {profile.location}</span></div>
         </div>
         <div className="ab-text">

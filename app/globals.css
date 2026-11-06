@@ -739,3 +739,20 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
 .posts a{grid-template-columns:1fr auto}
 .posts i{grid-row:1/3}
 .wn .paper{align-self:stretch}
+
+/* about portrait: 4:5 card instead of a circle */
+.about{grid-template-columns:260px 1fr}
+.ab-me{gap:18px}
+.ab-frame{position:relative;width:100%;max-width:260px;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:1px solid var(--line2);background:var(--raise);
+  box-shadow:0 30px 60px -30px rgba(var(--accent-rgb,157,184,255),.35)}
+.ab-frame::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.18));box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.ab-frame .ab-photo{width:100%;height:100%;object-fit:cover;object-position:50% 30%;border:0;border-radius:0;box-shadow:none;filter:none;transition:transform .8s var(--ease)}
+.ab-frame:hover .ab-photo{transform:scale(1.03)}
+.ab-me b{font-size:1.02rem}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .ab-me{flex-direction:row;align-items:center;gap:16px}
+  .ab-frame{width:112px;flex:none;border-radius:14px}
+  .ab-frame .ab-photo{width:100%;height:100%}
+}
