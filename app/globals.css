@@ -16,8 +16,6 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);font-weight
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:70;opacity:.05;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 ::selection{background:var(--accent);color:var(--bg)}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
@@ -78,7 +76,7 @@ h1,h2,h3,h4,.big26,.stats b,.kpis b,.mig .v,.nav .me{font-stretch:87%}
 .sub p{margin:0;max-width:52ch;font-size:clamp(1.02rem,1.4vw,1.18rem);color:var(--muted);line-height:1.6;animation:up .9s .7s var(--ease) both}
 .sub p b{color:var(--ink);font-weight:500}
 .ctas{display:flex;gap:10px;flex-wrap:wrap;animation:up .9s .85s var(--ease) both}
-.btn{position:relative;display:inline-flex;align-items:center;gap:10px;font:500 .95rem var(--body);padding:14px 22px;border-radius:999px;border:1px solid var(--line2);color:var(--ink);background:transparent;cursor:pointer;transition:background .3s,color .3s,border-color .3s;will-change:transform}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;font:500 .95rem var(--body);padding:14px 22px;border-radius:999px;border:1px solid var(--line2);color:var(--ink);background:transparent;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .btn:hover{border-color:var(--ink)}
 .btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
@@ -614,8 +612,6 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
 @media (hover:none){
   .opt .act{opacity:1}
   [data-reveal]{transform:none!important}
-  body::after{display:none}
-  .btn{will-change:auto}
 }
 
 /* product gallery: reflow the recreated screens instead of a fixed 880px canvas */

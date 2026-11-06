@@ -6,7 +6,8 @@ import Lenis from "lenis";
 export default function SmoothScroll() {
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    // Native wheel/touch scrolling keeps text on whole pixels (crisp). Lenis only animates anchor jumps.
+    const lenis = new Lenis({ smoothWheel: false });
     let id = 0;
     const raf = (t: number) => { lenis.raf(t); id = requestAnimationFrame(raf); };
     id = requestAnimationFrame(raf);

@@ -12,10 +12,10 @@ export default function Reveal({ children, className, delay = 0, as = "div" }: P
     <M
       className={className}
       data-reveal=""
-      initial={reduce ? false : { opacity: 0, y: 32 }}
+      initial={reduce ? false : { opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay }}
+      transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1], delay }}
     >
       {children}
     </M>
