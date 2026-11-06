@@ -23,7 +23,8 @@ export default function Contact() {
   return (
     <section className="contact" id="contact">
       <span className="eyebrow">Contact</span>
-      <h2>Have a hard frontend problem? <span>Let&apos;s talk.</span></h2>
+      <h2>Building something ambitious? <span>Let&apos;s talk.</span></h2>
+      <p className="contact-sub">Senior Software Engineer focused on scalable products, enterprise applications and high-performance engineering.</p>
       <div className="links">
         <button type="button" onClick={copy}><span>{label}</span><b ref={email}>{profile.email}</b></button>
         <a href={profile.linkedin} target="_blank" rel="noopener"><span>LinkedIn</span><b>{profile.linkedinHandle} ↗</b></a>
