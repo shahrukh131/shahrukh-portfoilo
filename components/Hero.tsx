@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { hero, profile, stats } from "@/content/site";
 import DotField from "./DotField";
 import CountUp from "./CountUp";
@@ -16,9 +17,12 @@ export default function Hero() {
       <p className="fullname">{profile.name}</p>
       <h1>
         {words.map((w, i) => (
-          <span key={w} className="w">
-            <span className={i === words.length - 1 ? "hl" : undefined} style={{ animationDelay: `${0.15 + i * 0.07}s` }}>{w}</span>
-          </span>
+          <Fragment key={w}>
+            <span className="w">
+              <span className={i === words.length - 1 ? "hl" : undefined} style={{ animationDelay: `${0.15 + i * 0.07}s` }}>{w}</span>
+            </span>
+            {i < words.length - 1 && " "}
+          </Fragment>
         ))}
       </h1>
       <div className="sub">
