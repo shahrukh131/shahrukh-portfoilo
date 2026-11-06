@@ -11,6 +11,7 @@ export default function Reveal({ children, className, delay = 0, as = "div" }: P
   return (
     <M
       className={className}
+      data-reveal=""
       initial={reduce ? false : { opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
