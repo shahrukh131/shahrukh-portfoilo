@@ -35,7 +35,7 @@ app/
 components/
   Hero, DotField    hero with the cursor-reactive dot grid and count-up stats
   Clients           client names and the stack marquee
-  Featured          multi-tenant SaaS with live link and animated tenant map
+  Featured          multi-tenant SaaS with animated tenant map
   CaseStudy         WINGS ITSM: sticky chapters, latency race, request counter
   ProductGallery    recreated WINGS screens (sample data) in a browser frame
   Work              selected work bento, including eTender contributions
@@ -59,4 +59,3 @@ Push to GitHub and import the repo in Vercel; no configuration needed. Add your 
 ## Known limits
 
 - Fonts load from Google Fonts at build time through `next/font`, so the build machine needs internet access.
-- The multi-tenant SaaS link opens a sign-in page; visitors need demo credentials.

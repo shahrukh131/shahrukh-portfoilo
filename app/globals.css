@@ -601,8 +601,7 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
 @media (max-width:560px){.feat-pts div{grid-template-columns:1fr;gap:2px}}
 .feat-pts dt{font-family:var(--body);font-size:.82rem;font-weight:500;letter-spacing:0;color:var(--accent);padding-top:2px}
 .feat-pts dd{margin:0;color:var(--ink);font-size:.95rem}
-.feat-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:26px 0 18px}
-.feat-cta .mono{color:var(--dim)}
+.feat-chips{margin-top:26px}
 .feat-vis{min-width:0}
 .fv-panel{border:1px solid var(--line2);border-radius:20px;background:var(--bg);padding:20px;display:grid;gap:14px;box-shadow:0 40px 100px -40px rgba(var(--accent-rgb),.3)}
 .fv-panel>*{min-width:0}

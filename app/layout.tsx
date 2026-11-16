@@ -33,7 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>
+      {/* Browser extensions (Grammarly, ColorZilla, etc.) inject attributes on <body> before React hydrates. */}
+      <body suppressHydrationWarning>
         <SmoothScroll />
         {children}
       </body>

@@ -40,7 +40,7 @@ export const clients = [
 
 export const stack = [
   "React", "Next.js", "TypeScript", "TanStack Query", "Redux Toolkit", "Zustand",
-  "React Hook Form", "Zod", "Tailwind CSS", "shadcn/ui", "NestJS", "PostgreSQL", "Redis",
+  "React Hook Form", "Zod", "Tailwind CSS", "shadcn/ui", "NestJS", "PostgreSQL", "Supabase", "Drizzle", "Redis",
   "BullMQ", "Socket.IO", "Laravel", "Docker", "CI/CD",
 ];
 
@@ -82,8 +82,8 @@ export const notes = [
   },
   {
     tag: "Backend · Data access",
-    title: "A typed repository instead of an ORM",
-    body: "For my multi-tenant SaaS I compared Prisma, TypeORM, Drizzle and Kysely. Schema-per-tenant PostgreSQL needs control over the search path on every query, so I chose raw pg behind a typed BaseRepository: SQL I can read, types at the boundary, and no ORM fighting the tenancy model.",
+    title: "Choosing Drizzle for schema-per-tenant",
+    body: "For my multi-tenant SaaS I compared Prisma, TypeORM, Drizzle and Kysely. Schema-per-tenant PostgreSQL needs control over the search path on every query, so I chose Drizzle on Supabase Postgres: queries that read like SQL, types inferred from the schema, and no heavy ORM fighting the tenancy model.",
   },
 ];
 
@@ -95,7 +95,7 @@ export const posts = [
 
 export const now = [
   { k: "Learning", v: "System design in depth, written up as I go" },
-  { k: "Building", v: "A multi-tenant warehouse and CMS SaaS on NestJS and PostgreSQL" },
+  { k: "Building", v: "A multi-tenant warehouse and CMS SaaS on NestJS, Supabase and Drizzle" },
   { k: "Looking for", v: "A senior frontend or fullstack role" },
 ];
 
@@ -107,7 +107,7 @@ export const about = [
 export const skills = [
   { icon: "ui", title: "Interface", items: "React · Next.js (App Router) · TypeScript · JavaScript · Tailwind CSS · shadcn/ui · MUI · Ant Design · Vite" },
   { icon: "state", title: "State & forms", items: "Redux Toolkit · Zustand · TanStack Query · React Hook Form · Zod" },
-  { icon: "api", title: "Backend & data", items: "Node.js · NestJS · Express · Laravel · REST APIs · Sequelize · PostgreSQL · MySQL · SQL Server" },
+  { icon: "api", title: "Backend & data", items: "Node.js · NestJS · Express · Laravel · REST APIs · Sequelize · Drizzle ORM · PostgreSQL · Supabase · MySQL · SQL Server" },
   { icon: "rt", title: "Real-time & jobs", items: "Socket.IO · Redis · BullMQ · Meilisearch · Cloudflare R2" },
   { icon: "sec", title: "Auth & security", items: "JWT · OAuth / SSO (Microsoft, Google) · RBAC · CSP · XSS prevention" },
   { icon: "tool", title: "Delivery", items: "Docker · CI/CD · Git · Swagger · code review · AI-assisted development (Claude Code)" },
@@ -153,17 +153,15 @@ export const publication = {
 };
 
 export const featured = {
-  eyebrow: "Featured · My own product · Live",
+  eyebrow: "Featured · My own product",
   title: "Multi-tenant CMS & Warehouse SaaS",
   summary:
     "One admin panel for many tenants: ecommerce, warehouse and marketplace businesses run orders, inventory, shipments and messaging from the same product, with each tenant's data isolated in its own PostgreSQL schema. I designed and built it end to end.",
-  live: "https://multi-tenant-cms-prod.vercel.app/dashboard",
-  liveNote: "Sign-in required. Demo access on request.",
   points: [
-    { k: "Architecture", v: "NestJS modular monolith with schema-per-tenant PostgreSQL and a typed repository layer over raw pg." },
+    { k: "Architecture", v: "NestJS modular monolith with schema-per-tenant PostgreSQL on Supabase, queried through Drizzle ORM." },
     { k: "Access", v: "Six-role permission hierarchy, from system admin to customer, tested across two tenants." },
     { k: "Real-time & jobs", v: "BullMQ background jobs, Socket.IO live updates, Meilisearch search and R2 file storage." },
   ],
   modules: ["Orders", "Inventory", "Shipments", "Messaging"],
-  stack: ["NestJS", "PostgreSQL", "Redis", "BullMQ", "Socket.IO", "Meilisearch", "Cloudflare R2"],
+  stack: ["NestJS", "Supabase", "PostgreSQL", "Drizzle ORM", "Redis", "BullMQ", "Socket.IO", "Meilisearch", "Cloudflare R2"],
 };

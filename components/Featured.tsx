@@ -9,7 +9,7 @@ const tenants = [
   { name: "tenant_bazaar", kind: "Marketplace" },
 ];
 
-/** The headline own-product card: live link, architecture points, and a small animated tenant map. */
+/** The headline own-product card: architecture points and a small animated tenant map. */
 export default function Featured() {
   const [hit, setHit] = useState(0);
   const [mod, setMod] = useState(0);
@@ -28,11 +28,7 @@ export default function Featured() {
           <dl className="feat-pts">
             {featured.points.map((p) => (<div key={p.k}><dt>{p.k}</dt><dd>{p.v}</dd></div>))}
           </dl>
-          <div className="feat-cta">
-            <a className="btn solid" href={featured.live} target="_blank" rel="noopener">Open the live app ↗</a>
-            <span className="mono">{featured.liveNote}</span>
-          </div>
-          <div className="chips">{featured.stack.map((s) => (<span key={s}>{s}</span>))}</div>
+          <div className="chips feat-chips">{featured.stack.map((s) => (<span key={s}>{s}</span>))}</div>
         </div>
         <div className="feat-vis" aria-hidden="true">
           <div className="fv-panel">
